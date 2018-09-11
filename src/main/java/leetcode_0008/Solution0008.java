@@ -41,6 +41,9 @@ public class Solution0008 {
                 else if (!posFlag && str.charAt(i) > '8'){
                     return Integer.MIN_VALUE;
                 }
+                else {
+                    res = res * 10 + str.charAt(i) - '0';
+                }
             }
             else {
                 return posFlag ? Integer.MAX_VALUE : Integer.MIN_VALUE;

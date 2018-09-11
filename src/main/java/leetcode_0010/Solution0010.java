@@ -41,7 +41,7 @@ public class Solution0010 {
         if (si < s.length())
             return false;
         if (pi < p.length()){
-            if (p.length() - pi == 3 && p.charAt(pi+2) == )
+//            if (p.length() - pi == 3 && p.charAt(pi+2) == )
         }
 
         return result;
