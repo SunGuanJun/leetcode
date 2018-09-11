@@ -17,5 +17,6 @@ public class Solution0008Test {
         Assert.assertEquals(4193, solution0008.myAtoi("4193 with words"));
         Assert.assertEquals(0, solution0008.myAtoi("words and 987"));
         Assert.assertEquals(-2147483648, solution0008.myAtoi("-91283472332"));
+        Assert.assertEquals(2147483646, solution0008.myAtoi("2147483646"));
     }
 }

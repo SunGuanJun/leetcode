@@ -14,6 +14,6 @@ public class Solution0011Test {
     @Test
     public void test1(){
         int[] heights = {1,8,6,2,5,4,8,3,7};
-        Assert.assertEquals(49, solution0011.max(heights));
+        Assert.assertEquals(49, solution0011.maxArea(heights));
     }
 }
