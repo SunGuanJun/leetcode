@@ -6,21 +6,21 @@ package leetcode_0011;
  */
 public class Solution0011 {
 
-    public int max(int[] heights){
-        int i = 0, j = heights.length - 1;
+    public int maxArea(int[] height) {
+        int i = 0, j = height.length - 1;
         int maxArea = 0, area;
-        int width, height;
+        int width, h;
         while (j>i){
             width = j - i;
-            if (heights[i] > heights[j]){
-                height = heights[j];
+            if (height[i] > height[j]){
+                h = height[j];
                 j--;
             }
             else {
-                height = heights[i];
+                h = height[i];
                 i++;
             }
-            area = width * height;
+            area = width * h;
             maxArea = maxArea > area ? maxArea : area;
         }
 
