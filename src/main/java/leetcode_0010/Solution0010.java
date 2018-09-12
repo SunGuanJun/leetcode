@@ -7,43 +7,18 @@ package leetcode_0010;
  */
 public class Solution0010 {
     public boolean isMatch(String s, String p) {
-        if (s.length() == 0){
-            if (p.length() == 0){
-                return true;
-            }
-            else {
-                if (p.length() == 2 && p.charAt(0) != '*' && p.charAt(1) == '*'){
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
+        if (p.length() == 0){
+            return s.length() == 0;
+        }
+        boolean firstMatch = s.length() != 0
+                && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+
+        if (p.length() >= 2 && p.charAt(1) == '*'){
+            return isMatch(s, p.substring(2))
+                    || (firstMatch && isMatch(s.substring(1), p));
         }
         else {
-            if (p.length() == 0){
-                return false;
-            }
-            else {
-                return isMatchNotNull(s, p);
-            }
+            return firstMatch && isMatch(s.substring(1), p.substring(1));
         }
-    }
-
-    public boolean isMatchNotNull(String s, String p){
-        boolean result = false;
-        int si = 0, pi = 0;
-        char sCurr, pPre, pCurr;
-
-        while (si<s.length() && pi<p.length()){
-
-        }
-        if (si < s.length())
-            return false;
-        if (pi < p.length()){
-//            if (p.length() - pi == 3 && p.charAt(pi+2) == )
-        }
-
-        return result;
     }
 }
