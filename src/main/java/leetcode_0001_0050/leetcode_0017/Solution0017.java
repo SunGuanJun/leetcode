@@ -19,6 +19,10 @@ public class Solution0017 {
     public List<String> letterCombinations(String digits) {
         List<String> results = new ArrayList<>();
 
+        if (digits.length() == 0){
+            return results;
+        }
+
         HashMap<Character, String> map = new HashMap<>();
         map.put('2', "abc");
         map.put('3', "def");
