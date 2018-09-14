@@ -26,6 +26,9 @@ public class Solution0021 {
         if (l2 != null){
             l3i.next = l2;
         }
+        if (l3 == null){
+            l3 = l3i.next;
+        }
 
         return l3;
     }

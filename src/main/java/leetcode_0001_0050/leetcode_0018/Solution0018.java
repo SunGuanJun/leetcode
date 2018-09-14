@@ -1,8 +1,6 @@
 package leetcode_0001_0050.leetcode_0018;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by sun on 2018/9/13.
@@ -11,7 +9,7 @@ public class Solution0018 {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);
 
-        List<List<Integer>> results = new ArrayList<>();
+        Set<List<Integer>> results = new HashSet<>();
         for (int i1=0; i1<nums.length-3; i1++){
             for (int i2=i1+1; i2<nums.length-2; i2++){
                 int i3=i2+1, i4=nums.length-1;
@@ -40,6 +38,6 @@ public class Solution0018 {
                 }
             }
         }
-        return results;
+        return new ArrayList<>(results);
     }
 }

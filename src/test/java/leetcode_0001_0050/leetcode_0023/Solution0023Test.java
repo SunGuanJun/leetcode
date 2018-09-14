@@ -34,4 +34,15 @@ public class Solution0023Test {
 			l = l.next;
 		}
 	}
+
+	@Test
+	public void test2(){
+		ListNode[] listNodes = {null, new ListNode(1), new ListNode(2)};
+		ListNode l = solution0023.mergeKLists(listNodes);
+
+		while (l != null){
+			System.out.println(l.val);
+			l = l.next;
+		}
+	}
 }
