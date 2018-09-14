@@ -17,7 +17,7 @@ public class Solution0024Test {
 		l2.next = l3;
 		l3.next = l4;
 		l4.next = l13;
-		l13.next = l14;
+//		l13.next = l14;
 
 		ListNode l = solution0024.swapPairs(l1);
 		while (l != null){
