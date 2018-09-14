@@ -29,4 +29,13 @@ public class Solution0021Test {
 			l = l.next;
 		}
 	}
+
+	@Test
+	public void test2(){
+		ListNode l = solution0021.mergeTwoLists(null, new ListNode(0));
+		while (l != null){
+			System.out.println(l.val);
+			l = l.next;
+		}
+	}
 }
