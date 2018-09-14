@@ -7,6 +7,6 @@ public class Solution0022Test {
 
 	@Test
 	public void test1(){
-
+		System.out.println(solution0022.generateParenthesis(3));
 	}
 }
