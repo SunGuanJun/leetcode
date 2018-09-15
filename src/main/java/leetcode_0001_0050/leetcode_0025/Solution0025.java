@@ -9,9 +9,44 @@ package leetcode_0001_0050.leetcode_0025;
  */
 public class Solution0025 {
     public ListNode reverseKGroup(ListNode head, int k) {
-        return null;
+        ListNode current=head, head2, start=head, finalHead = null, pre=null;
+        int count=0;
+        while (current != null){
+            count++;
+            current = current.next;
+            if (count == k){
+                head2 = reverse(start, k);
+                if (pre != null){
+                    pre.next = head2; // 连接翻转后的链表
+                }
+                pre = start;    // 翻转后 start就是最后一个节点了
+                count = 0;
+                start = current;
+                if (finalHead == null){
+                    finalHead = head2;
+                }
+            }
+        }
+
+        return finalHead == null ? head : finalHead;
     }
 
+
+    public ListNode reverse(ListNode head, int k){
+        ListNode current = head, head2 = null, current2=null;
+        for (int i=0; i<k; i++){
+            head2 = current;
+            current = current.next;
+            head2.next = current2;
+            current2 = head2;
+        }
+
+        if (current != null){
+            head.next = current;
+        }
+
+        return head2;
+    }
 }
 
 class ListNode {
