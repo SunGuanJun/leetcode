@@ -1,9 +1,11 @@
 package leetcode_0001_0050.leetcode_0030;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 输入:
@@ -19,8 +21,8 @@ import java.util.*;
  *   words = ["word","student"]
  * 输出: []
  */
-public class Solution0030Test {
-	Solution0030 solution0030 = new Solution0030();
+public class Solution0030_3Test {
+	Solution0030_3 solution0030 = new Solution0030_3();
 
 	@Test
 	public void test1(){
@@ -35,49 +37,10 @@ public class Solution0030Test {
 	}
 
 
-
-	@Test
-	public void test3(){
-		List<Integer> result = solution0030.getIndexs("barfoothefoobarman", "foo");
-		for (Integer index : result){
-			System.out.println(index);
-		}
-
-		result = solution0030.getIndexs("barfoothefoobarman", "bar");
-		for (Integer index : result){
-			System.out.println(index);
-		}
-	}
-
-	@Test
-	public void test4(){
-		solution0030.dg(new int[]{1,2,3}, 3);
-	}
-
 	@Test
 	public void test5(){
 		List<Integer> res = solution0030.findSubstring("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 				new String[]{"a", "a","a", "a","a", "a","a", "a","a", "a","a", "a","a", "a","a", "a","a", "a","a", "a"});
-
-	}
-
-	@Test
-	public void test6(){
-		System.out.println("abcdefg".substring(1,4));
-		System.out.println("abcdefg".substring(4,7));
-		System.out.println("abcdefg".substring(6,7));
-	}
-
-	@Test
-	public void test7(){
-		Map<String, Integer> aMap = new HashMap<>();
-		aMap.put("aa", 2);
-		aMap.put("bb", 1);
-
-		Map<String, Integer> bMap = new HashMap<>();
-		bMap.put("aa", 2);
-		bMap.put("bb", 1);
-
-		System.out.println(aMap.equals(bMap));
+		System.out.println(JSON.toJSONString(res));
 	}
 }
