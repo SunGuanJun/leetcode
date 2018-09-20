@@ -1,5 +1,9 @@
 package leetcode_0001_0050.leetcode_0031;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.Arrays;
+
 /**
  * 1,2,3 → 1,3,2
  3,2,1 → 1,2,3
@@ -12,7 +16,7 @@ public class Solution0031 {
             if (nums[i] > nums[i-1]){
                 int right = findBigger(nums, i+1, nums[i-1]);
                 swap(nums, i-1, right);
-                swapAll(nums, i, nums.length-1);
+                Arrays.sort(nums, i, nums.length);
                 return;
             }
         }
@@ -21,7 +25,7 @@ public class Solution0031 {
 
     public int findBigger(int[] nums, int start, int target){
         while (start < nums.length){
-            if (nums[start] < target){
+            if (nums[start] <= target){
                 return start-1;
             }
             start++;
