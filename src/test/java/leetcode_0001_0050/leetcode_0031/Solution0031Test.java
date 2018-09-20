@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * 1,2,3 → 1,3,2
  3,2,1 → 1,2,3
@@ -17,6 +19,7 @@ public class Solution0031Test {
 		int[] nums = {1,2,3};
 		int[] nums2 = {1,3,2};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -25,6 +28,7 @@ public class Solution0031Test {
 		int[] nums = {3,2,1};
 		int[] nums2 = {1,2,3};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -33,6 +37,7 @@ public class Solution0031Test {
 		int[] nums = {1,1,5};
 		int[] nums2 = {1,5,1};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -41,6 +46,7 @@ public class Solution0031Test {
 		int[] nums = {1,5,1};
 		int[] nums2 = {5,1,1};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -49,6 +55,7 @@ public class Solution0031Test {
 		int[] nums = {1,2};
 		int[] nums2 = {2,1};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -57,6 +64,7 @@ public class Solution0031Test {
 		int[] nums = {1,2,3,4};
 		int[] nums2 = {1,2,4,3};
 		solution0031.nextPermutation(nums);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -84,6 +92,7 @@ public class Solution0031Test {
 		int[] nums = {1,1,5};
 		int[] nums2 = {5, 1,1};
 		solution0031.swapAll(nums, 0, nums.length-1);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -92,6 +101,7 @@ public class Solution0031Test {
 		int[] nums = {1,1,1,5};
 		int[] nums2 = {5, 1, 1,1};
 		solution0031.swapAll(nums, 0, nums.length-1);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -100,6 +110,7 @@ public class Solution0031Test {
 		int[] nums = {1,2};
 		int[] nums2 = {2, 1};
 		solution0031.swapAll(nums, 0, nums.length-1);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
@@ -108,7 +119,14 @@ public class Solution0031Test {
 		int[] nums = {1,2,3,4,5,6,7,8};
 		int[] nums2 = {1,5,4,3,2, 6,7,8};
 		solution0031.swapAll(nums, 1,4);
+		System.out.println(JSON.toJSONString(nums));
 		Assert.assertArrayEquals(nums2, nums);
 	}
 
+	@Test
+	public void sortTest(){
+		int[] nums = {1,5,4,3,2, 6,7,0};
+		Arrays.sort(nums);
+		System.out.println(JSON.toJSONString(nums));
+	}
 }
