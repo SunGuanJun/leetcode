@@ -27,4 +27,23 @@ public class Solution0033Test {
 		int[] nums = {4,5,6,7,0,1,2};
 		Assert.assertEquals(-1, solution0033.search(nums, 3));
 	}
+
+	@Test
+	public void test3(){
+		int[] nums = {1,3};
+		Assert.assertEquals(-1, solution0033.search(nums, 2));
+	}
+
+	@Test
+	public void test4(){
+		int[] nums = {1,3, 5};
+		Assert.assertEquals(2, solution0033.search(nums, 5));
+	}
+
+	@Test
+	public void test5(){
+		int[] nums = {4,5,6,7,0,1,2};
+		Assert.assertEquals(4, solution0033.search(nums, 0));
+	}
+
 }
