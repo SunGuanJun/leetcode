@@ -22,14 +22,41 @@ public class Solution0033 {
             if (nums[mid] == target){
                 return mid;
             }
+            else if (nums[left] <= nums[mid] ){
+                if (nums[mid] < nums[right]){
+                    // 完全顺序
+                    return target < nums[mid] ? search(nums, target, left, mid-1)
+                            : search(nums, target, mid+1, right);
+                }
+                else {
+                    // 旋转点在右侧
+                    if (target < nums[mid] && target >= nums[left]){
+                        return search(nums, target, left, mid-1);
+                    }
+                    else {
+                        return search(nums, target, mid+1, right);
+                    }
+                }
+            }
             else {
-                if (target >= nums[left] && target != nums[right]){
-                    return search(nums, target, left, mid-1);
+                if (nums[mid] < nums[right]){
+                    // 旋转点在左侧
+                    if (target > nums[mid] && target <= nums[right]){
+                        return search(nums, target, mid+1, right);
+                    }
+                    else {
+                        return search(nums, target, left, mid-1);
+                    }
                 }
-                else if (target <= nums[right]){
-                    return search(nums, target, mid+1, right);
+                else {
+                    // 旋转点在右侧
+                    if (target < nums[mid] && target >= nums[left]){
+                        return search(nums, target, mid+1, right);
+                    }
+                    else {
+                        return search(nums, target, left, mid-1);
+                    }
                 }
-                return -1;
             }
         }
     }
