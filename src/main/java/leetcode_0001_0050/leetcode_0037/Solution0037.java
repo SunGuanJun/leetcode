@@ -2,7 +2,7 @@ package leetcode_0001_0050.leetcode_0037;
 
 public class Solution0037 {
     public void solveSudoku(char[][] board) {
-        solve(board, 0,0);
+        solveSudokuDFS(board, 0,0);
     }
 
     public boolean solve(char[][] board, int x, int y){
