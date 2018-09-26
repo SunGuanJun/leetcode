@@ -7,6 +7,7 @@ public class Solution0049Test {
 
 	@Test
 	public void test1(){
-
+		System.out.println(solution0049.groupAnagrams(
+				new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
 	}
 }
