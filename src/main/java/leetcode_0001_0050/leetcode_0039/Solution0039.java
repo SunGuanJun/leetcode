@@ -1,34 +1,28 @@
 package leetcode_0001_0050.leetcode_0039;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Solution0039 {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        Set<List<Integer>> result = new HashSet<>();
-        combine(candidates, target, 0, 0, new ArrayList<>(), result);
-        return new ArrayList<>(result);
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates);
+        combine(result, new ArrayList<>(), candidates, target, 0);
+        return result;
     }
 
-    public void combine(int[] nums, int target, int sum, int start,List<Integer> tmpList, Set<List<Integer>> result){
-        if (start == nums.length){
+    public void combine(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
+        if (remain < 0) {
             return;
         }
-        combine(nums, target, sum, start+1, new ArrayList<>(tmpList), result);
-        while (sum<target){
-            sum+=nums[start];
-            tmpList.add(nums[start]);
-            combine(nums, target, sum, start+1, new ArrayList<>(tmpList), result);
+        else if (remain == 0) {
+            list.add(new ArrayList<>(tempList));
         }
-        if (sum == target){
-            result.add(tmpList);
-        }
-        else {
-            tmpList.remove(tmpList.size()-1);
-            sum-= nums[start];
-            combine(nums, target, sum, start+1, new ArrayList<>(tmpList), result);
+        else{
+            for(int i = start; i < nums.length; i++){
+                tempList.add(nums[i]);
+                combine(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
+                tempList.remove(tempList.size() - 1);
+            }
         }
     }
 }

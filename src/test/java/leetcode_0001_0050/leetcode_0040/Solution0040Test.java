@@ -29,12 +29,12 @@ public class Solution0040Test {
 	@Test
 	public void test1(){
 		int[] nums = {10,1,2,7,6,1,5};
-		System.out.println(JSON.toJSONString(solution0040.combinationSum(nums, 8)));
+		System.out.println(JSON.toJSONString(solution0040.combinationSum2(nums, 8)));
 	}
 
 	@Test
 	public void test2(){
 		int[] nums = {2,5,2,1,2};
-		System.out.println(JSON.toJSONString(solution0040.combinationSum(nums, 5)));
+		System.out.println(JSON.toJSONString(solution0040.combinationSum2(nums, 5)));
 	}
 }

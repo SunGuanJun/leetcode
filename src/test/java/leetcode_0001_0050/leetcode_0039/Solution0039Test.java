@@ -70,4 +70,18 @@ public class Solution0039Test {
 
         Assert.assertEquals(result, result2);
 	}
+
+	@Test
+	public void test4(){
+		List<List<Integer>> result = new ArrayList<>();
+		result.add(Arrays.asList(2,2,2,2));
+		result.add(Arrays.asList(2,3,3));
+		result.add(Arrays.asList(3,5));
+
+		int[] nums = {11,7,10,3,6,4,8};
+		List<List<Integer>> result2 = solution0039.combinationSum(nums, 14);
+		System.out.println(JSON.toJSONString(result2));
+
+//		Assert.assertEquals(result, result2);
+	}
 }
