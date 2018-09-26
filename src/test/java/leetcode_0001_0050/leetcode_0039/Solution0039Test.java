@@ -1,5 +1,6 @@
 package leetcode_0001_0050.leetcode_0039;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -50,7 +51,10 @@ public class Solution0039Test {
 		result.add(Arrays.asList(2,2,3));
 
 		int[] nums = {2,3,6,7};
-		Assert.assertEquals(result, solution0039.combinationSum(nums, 7));
+        List<List<Integer>> result2 = solution0039.combinationSum(nums, 7);
+        System.out.println(JSON.toJSONString(result2));
+
+		Assert.assertEquals(result, result2);
 	}
 
 	@Test
@@ -61,7 +65,9 @@ public class Solution0039Test {
 		result.add(Arrays.asList(3,5));
 
 		int[] nums = {2,3,5};
+        List<List<Integer>> result2 = solution0039.combinationSum(nums, 8);
+        System.out.println(JSON.toJSONString(result2));
 
-		Assert.assertEquals(result, solution0039.combinationSum(nums, 8));
+        Assert.assertEquals(result, result2);
 	}
 }
