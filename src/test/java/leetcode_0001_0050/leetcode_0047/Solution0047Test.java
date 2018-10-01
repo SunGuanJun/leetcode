@@ -10,4 +10,10 @@ public class Solution0047Test {
 	public void test1(){
 		System.out.println(JSON.toJSONString(solution0047.permuteUnique(new int[]{1,1,2})));
 	}
+
+	@Test
+	public void test2(){
+		System.out.println(JSON.toJSONString(solution0047.permuteUnique(new int[]{2,2,1,1})));
+	}
+
 }
