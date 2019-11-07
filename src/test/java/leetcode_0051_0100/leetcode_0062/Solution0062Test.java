@@ -7,6 +7,6 @@ public class Solution0062Test {
 
 	@Test
 	public void test1(){
-
+		System.out.println(solution0062.uniquePaths(10, 10));
 	}
 }
